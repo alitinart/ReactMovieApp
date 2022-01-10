@@ -4,7 +4,7 @@ import "./MovieDetails.css";
 import { Component } from "react/cjs/react.production.min";
 
 class MovieDetails extends Component {
-  queryParams = new URLSearchParams(window.location.pathname);
+  hasCollection = true;
 
   constructor(props) {
     super(props);
@@ -20,9 +20,6 @@ class MovieDetails extends Component {
         spoken_languages: ["English"],
         genres: ["Comedy"],
         production_countries: ["1"],
-        belongs_to_collection: {
-          poster_path: "aWeKITRFbbwY8txG5uCj4rMCfSP.jpg",
-        },
       },
     };
   }
@@ -68,16 +65,7 @@ class MovieDetails extends Component {
             <br />
             <p className="movie-overview">{this.state.movieData.overview}</p>
             <br />
-            <p className="collection">
-              Belongs to Collection: <br />
-              <img
-                src={
-                  "https://image.tmdb.org/t/p/w185/" +
-                  this.state.movieData.belongs_to_collection.poster_path
-                }
-              />{" "}
-            </p>
-            <br />
+
             <p>
               Languages Spoken :{" "}
               {this.state.movieData.spoken_languages.map((language) => {
