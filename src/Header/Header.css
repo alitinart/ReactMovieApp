@@ -1,0 +1,90 @@
+.header {
+  padding: 30px 0;
+  display: flex;
+}
+.navigation {
+  display: inline-flex;
+  list-style-type: none;
+}
+.nav-pg {
+  margin: 0 15px;
+}
+.nav-pg > a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+.nav-pg:hover > a {
+  background-color: white;
+  color: black;
+}
+
+#hamburger-navigation {
+  display: none;
+  transition: 0.5s;
+}
+
+.hamburger-icon {
+  width: 50px;
+  display: none;
+}
+.hamburger {
+  display: inline;
+}
+
+.hamburger-navigation {
+  list-style-type: none;
+  padding: 10px;
+  margin: 20px 0;
+  border-radius: 10px;
+  width: 25%;
+  background-color: black;
+}
+
+.hamburger-navigation > li {
+  margin: 10px 0;
+}
+
+.hamburger-navigation > li > a {
+  padding: 0;
+}
+
+.logo {
+  width: 100px;
+  margin: auto 0;
+  float: right;
+  -webkit-animation: spin 4s linear infinite;
+  -moz-animation: spin 4s linear infinite;
+  animation: spin 4s linear infinite;
+}
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@media screen and (max-width: 767px) {
+  .hamburger-icon {
+    display: inline;
+  }
+  .navigation {
+    display: none;
+  }
+  .logo {
+    display: none;
+  }
+}

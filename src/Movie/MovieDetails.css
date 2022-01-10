@@ -1,0 +1,16 @@
+.movie-details {
+  width: 100%;
+}
+.vote {
+  background-color: red;
+  border-radius: 100%;
+  display: inline-block;
+  padding: 10px;
+}
+.vote-count {
+  display: inline;
+  margin-left: 10px;
+}
+.movie-poster {
+  margin-bottom: 20px;
+}

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./Movies.css";
 
 class Movie extends Component {
@@ -17,7 +18,9 @@ class Movie extends Component {
           <img className="movie-poster" src={this.props.image} />
           <h1 className="movie-title"> {this.props.title} </h1>
           <p> {this.props.summary} </p>
-          <button className="btn">More Info </button>
+          <button className="btn">
+            <Link to={"/movie/" + this.props.id}> More Info </Link>
+          </button>
         </div>
       </div>
     );

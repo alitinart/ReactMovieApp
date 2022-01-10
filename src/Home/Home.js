@@ -5,6 +5,8 @@ import Movie from "./Movies/Movies";
 import "./Home.css";
 
 function Home() {
+  sessionStorage.removeItem("movie-details");
+
   axios
     .get(
       "https://api.themoviedb.org/3/trending/all/day?api_key=d80eb675515194444fd642c21502cbf4"
@@ -16,24 +18,26 @@ function Home() {
 
   let movies = JSON.parse(sessionStorage.getItem("trendingMovies"));
   return (
-    <div>
+    <div className="home">
       <h1 className="section-header">Trending Movies</h1>
-      <div className="trendingMovies">
-        {movies.results.map((movie) => {
-          if (!movie.title) {
-            return;
-          }
-          return (
-            <div className="item">
-              <Movie
-                title={movie.title}
-                key={movie.title}
-                summary={movie.overview}
-                image={"https://image.tmdb.org/t/p/w185/" + movie.poster_path}
-              ></Movie>
-            </div>
-          );
-        })}
+      <div className="container trendingMovies">
+        <div className="row">
+          {movies.results.map((movie) => {
+            if (!movie.title) {
+              return false;
+            }
+            return (
+              <div className="col-md-2 movie" key={movie.id}>
+                <Movie
+                  title={movie.title}
+                  summary={movie.overview}
+                  id={movie.id}
+                  image={"https://image.tmdb.org/t/p/w185/" + movie.poster_path}
+                ></Movie>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

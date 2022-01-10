@@ -1,0 +1,26 @@
+.search-bar {
+  border-radius: 5px;
+  padding: 5px;
+}
+.search-button {
+  border-radius: 5px;
+  margin-left: 10px;
+  padding: 5px;
+  border: white 1px solid;
+  background-color: transparent;
+  color: white;
+  transition: 0.5s;
+}
+.search-button:hover {
+  background-color: white;
+  color: black;
+}
+.search {
+  width: 100%;
+}
+.content {
+  margin: auto 0;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
